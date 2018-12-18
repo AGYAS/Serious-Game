@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Canvas TD</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono">
+		<link rel="stylesheet" href="index.css">
+	</head>
+	<body>
+		<!-- Corps de la page -->
+		<p>Jeu de &lt;médical Defense&gt;</p>
+		<p>Ce jeu stratégique consiste à empecher le passage des virus et des bactéries d'une zone de départ vers une zone d'arrivée, en plaçant des médicaments, des sirops, des injections qui les éliminent au cours de leur production. </p>
+		<h2>Réalisatrices:</h2>
+		<p>ESIPE-Ingénierie et Technologie pour la santé : ASSARAR Wafae / AMELLAL Mouna / AGUENIHANAI Yasmina/ AMAR Oumaima</p>
+		<div id="pages">
+			<canvas id="pages-canvas" width="800" height="500"></canvas>
+			
+			<div id="pages-overlay"></div>
+			
+			<div id="pages-start">
+				<div id="pages-start-maps">
+					<a><img src="images/maps/loopy.png" width="80" height="50">Cerveau</a>
+					<a><img src="images/maps/backtrack.gif" width="80" height="50">Coeur</a>
+					<a><img src="images/maps/dash.png" width="80" height="50">Estomac</a>
+					<h2>Help:</h2>
+					<dl>
+						<dt><kbd>1</kbd></dt>
+						<dd>Médicament / Améliorer les dégâts</dd>
+						
+						<dt><kbd>2</kbd></dt>
+						<dd>Injection / Taux de mise à niveau</dd>
+						
+						<dt><kbd>3</kbd></dt>
+						<dd>Sirop / Gamme de mise à niveau </dd>
+						
+						<dt><kbd>4</kbd></dt>
+						<dd>Chirurgie / se déplacer</dd>
+						
+						<dt><kbd>*</kbd></dt>
+						<dd>Vendre</dd>
+						
+						<dt><kbd>=</kbd></dt>
+						<dd>Avance rapide</dd>
+						
+						<dt><kbd>Esc</kbd></dt>
+						<dd>Deselectionner / annuler / Pause</dd>
+						
+						<dt><kbd>Enter</kbd></dt>
+						<dd>Envoyer une vague</dd>
+					</dl>
+				</div>
+				
+				<div id="pages-start-info">
+					<h2>Instructions du jeu</h2>
+					<p>- Construire et améliorer les moyens utilisés(médicaments,sirops,injections...) coutent de l'argent.</p>
+					<p>- Le score s'incrémente en fonction des bactéries et des virus vaincus et génère par la suite de l'argent.</p>
+					<p>- Ces différents outils possèdent des capacités spéciales et varient selon la puissance de feu,la fréquence de tir</p>
+					<p> --> Médicament et Sirop:un dommage de la zone</p>
+					<p> --> Injection:une chaine de dommage</p>
+					<p> --> Chirurgie:ralentit les cibles touchés</p>
+					
+					
+				</div>
+				
+			</div>
+			
+			<div id="pages-scores">
+				<h3>Loopy</h3>
+				<h3>Backtrack</h3>
+				<h3>Dash</h3>
+				
+				<ul id="pages-scores-twitter-loopy"></ul>
+				<ul id="pages-scores-twitter-backtrack"></ul>
+				<ul id="pages-scores-twitter-dash"></ul>
+				
+				<ul id="pages-scores-local-loopy"></ul>
+				<ul id="pages-scores-local-backtrack"></ul>
+				<ul id="pages-scores-local-dash"></ul>
+				
+				<a data-page="" id="pages-scores-back">←</a>
+			</div>
+			 
+		</div>
+		
+		<div id="control">
+			<div id="control-left">
+				<div id="control-turrets">
+					<a data-name="Laser"><img src="images/turrets/archer-aoe.gif" width="25" height="25"><br>PCT(15E)</a>
+					<a data-name="Missile"><img src="images/turrets/missile.gif" width="25" height="25"><br>AntiB(25E)</a>
+					<a data-name="Tazer"><img src="images/turrets/tazer.png" width="25" height="25"><br> Srg(40E)</a>
+					<a data-name="Mortar"><img src="images/turrets/mortar.png" width="25" height="25"><br>Chirg(60E)</a>
+				</div>
+
+				<div id="control-manage">
+					<a id="control-manage-damage"></a>
+					<a id="control-manage-rate"></a>
+					<a id="control-manage-range"></a>
+					<a id="control-manage-move">Move<br>$90</a>
+					<a id="control-manage-sell"></a>
+					<div id="control-manage-stats"></div>
+				</div>
+
+				<div id="control-score">
+					Jeu terminé! Voir votre score <span id="control-score-text"></span>.<br><br>
+					<a href="">Jouez encore</a> or <a data-page="scores">voir scores</a>
+				</div>
+			</div>
+			
+			<div id="control-right">
+				<div id="control-right-1">
+					<a id="control-timer"></a>
+					<a id="control-fast"></a>
+				</div>
+				
+				<div id="control-right-2">
+					Cash(E) <span id="control-cash">35</span><br>
+					Vies <span id="control-lives">10</span><br>
+					Vagues #<span id="control-wave">1</span>
+				</div>
+				
+				<div id="control-right-3">
+					<span id="control-fps">60</span>FPS<br>
+					<a id="control-pause">Pause</a><br>
+					<a href="">Quitter</a>
+				</div>
+			</div>
+		</div>
+		
+		
+		<script src="scripts/utils.js"></script>
+		<script src="scripts/defs.js"></script>
+		<script src="scripts/game.js"></script>
+		<script src="scripts/ui.js"></script>
+	</body>
+</html>
